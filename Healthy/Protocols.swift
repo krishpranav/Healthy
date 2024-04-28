@@ -47,5 +47,24 @@ public class StatusDateFormatter {
 }
 
 public struct Status: Equatable {
+    public static let dateFormatter = StatusDateFormatter()
     
+    public static var dateFormat: String {
+        get {
+            return dateFormatter.dateFormat
+        }
+    }
+    
+    public let state: State
+    
+    public let details: [String]
+    
+    public var tsInMillis: UInt64 {
+        get {
+            let date = Status.dateFormatter.date(from: timestamp)
+            return date!.milliseconds
+        }
+    }
+    
+    public let timestamp: String
 }
