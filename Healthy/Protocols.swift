@@ -67,4 +67,14 @@ public struct Status: Equatable {
     }
     
     public let timestamp: String
+    
+    enum CodingKeys: String, CodingKey {
+        case status
+        case details
+        case timestamp
+    }
+    
+    public static func ==(lhs: Status, rhs: Status) -> Bool {
+        return (lhs.state == rhs.state) && (lhs.details == rhs.details) && (lhs.timestamp == rhs.timestamp)
+    }
 }
