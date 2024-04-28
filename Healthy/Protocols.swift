@@ -77,4 +77,18 @@ public struct Status: Equatable {
     public static func ==(lhs: Status, rhs: Status) -> Bool {
         return (lhs.state == rhs.state) && (lhs.details == rhs.details) && (lhs.timestamp == rhs.timestamp)
     }
+    
+    public init(state: State = State.UP, details: [String] = [], timestamp: String = dateFormatter.string(from: Date())) {
+        self.state = state
+        self.details = details
+        
+        if let _ = Status.dateFormatter.date(from: timestamp) {
+            self.timestamp = timestamp
+        } else {
+            self.timestamp = Status.dateFormatter.string(from: Date())
+            Log.warning("Provided timestamp value '\(timestamp)' is not valid; using current time value instead.")
+        }
+    }
+    
+    
 }
