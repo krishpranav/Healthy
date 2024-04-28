@@ -12,6 +12,8 @@
 		B128385D2BDE6CF2000F0F7A /* HealthyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B128385C2BDE6CF2000F0F7A /* HealthyTests.swift */; };
 		B128385E2BDE6CF2000F0F7A /* Healthy.h in Headers */ = {isa = PBXBuildFile; fileRef = B12838502BDE6CF2000F0F7A /* Healthy.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B12838682BDE6D39000F0F7A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12838672BDE6D39000F0F7A /* Utils.swift */; };
+		B128386A2BDE6D9A000F0F7A /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12838692BDE6D9A000F0F7A /* Protocols.swift */; };
+		B128386D2BDE6DC5000F0F7A /* LoggerAPI in Frameworks */ = {isa = PBXBuildFile; productRef = B128386C2BDE6DC5000F0F7A /* LoggerAPI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +33,7 @@
 		B12838572BDE6CF2000F0F7A /* HealthyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HealthyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B128385C2BDE6CF2000F0F7A /* HealthyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthyTests.swift; sourceTree = "<group>"; };
 		B12838672BDE6D39000F0F7A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		B12838692BDE6D9A000F0F7A /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B128386D2BDE6DC5000F0F7A /* LoggerAPI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +80,7 @@
 				B12838502BDE6CF2000F0F7A /* Healthy.h */,
 				B12838512BDE6CF2000F0F7A /* Healthy.docc */,
 				B12838672BDE6D39000F0F7A /* Utils.swift */,
+				B12838692BDE6D9A000F0F7A /* Protocols.swift */,
 			);
 			path = Healthy;
 			sourceTree = "<group>";
@@ -116,6 +121,9 @@
 			dependencies = (
 			);
 			name = Healthy;
+			packageProductDependencies = (
+				B128386C2BDE6DC5000F0F7A /* LoggerAPI */,
+			);
 			productName = Healthy;
 			productReference = B128384D2BDE6CF2000F0F7A /* Healthy.framework */;
 			productType = "com.apple.product-type.framework";
@@ -165,6 +173,9 @@
 				Base,
 			);
 			mainGroup = B12838432BDE6CF2000F0F7A;
+			packageReferences = (
+				B128386B2BDE6DC5000F0F7A /* XCRemoteSwiftPackageReference "LoggerAPI" */,
+			);
 			productRefGroup = B128384E2BDE6CF2000F0F7A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -197,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B128386A2BDE6D9A000F0F7A /* Protocols.swift in Sources */,
 				B12838522BDE6CF2000F0F7A /* Healthy.docc in Sources */,
 				B12838682BDE6D39000F0F7A /* Utils.swift in Sources */,
 			);
@@ -490,6 +502,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B128386B2BDE6DC5000F0F7A /* XCRemoteSwiftPackageReference "LoggerAPI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Kitura/LoggerAPI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B128386C2BDE6DC5000F0F7A /* LoggerAPI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B128386B2BDE6DC5000F0F7A /* XCRemoteSwiftPackageReference "LoggerAPI" */;
+			productName = LoggerAPI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B12838442BDE6CF2000F0F7A /* Project object */;
 }
